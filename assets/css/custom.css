@@ -1,0 +1,181 @@
+/* =========================
+   Global design tokens
+   ========================= */
+   :root{
+    --bg: #0b0f14;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: rgba(15, 23, 42, 0.72);
+    --border: rgba(15, 23, 42, 0.10);
+  
+    --radius-lg: 18px;
+    --radius-md: 14px;
+  
+    --max: 980px;
+  
+    --shadow: 0 10px 30px rgba(0,0,0,.10);
+    --shadow-soft: 0 8px 18px rgba(0,0,0,.07);
+  }
+  
+  /* =========================
+     Base
+     ========================= */
+  html, body { height: 100%; }
+  body{
+    margin: 0;
+    color: var(--text);
+    background: #f6f7fb;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.65;
+  }
+  
+  a{
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  a:hover{ opacity: .85; }
+  
+  .wrapper{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+  
+  /* =========================
+     Header / Nav (minima friendly)
+     ========================= */
+  .site-header{
+    border-top: 0 !important;
+    border-bottom: 1px solid var(--border) !important;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(10px);
+  }
+  .site-title{
+    font-weight: 700 !important;
+    letter-spacing: .2px;
+  }
+  .site-nav .page-link{
+    font-weight: 600;
+    opacity: .85;
+  }
+  .site-nav .page-link:hover{
+    opacity: 1;
+  }
+  
+  /* =========================
+     Hero section
+     ========================= */
+  .hero{
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    min-height: 360px;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    margin: 22px 0 28px;
+    background: url("/assets/img/hero.jpg") center/cover no-repeat;
+    box-shadow: var(--shadow);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.10));
+  }
+  .hero-content{
+    position: relative;
+    color: #fff;
+    max-width: 760px;
+  }
+  .hero h1{
+    margin: 0 0 10px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.15;
+  }
+  .hero p{
+    margin: 0;
+    font-size: clamp(15px, 2.1vw, 18px);
+    opacity: .95;
+  }
+  
+  /* Optional CTA button style */
+  .btn{
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.30);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn:hover{ background: rgba(255,255,255,.22); }
+  
+  /* =========================
+     Cards + Post grid
+     ========================= */
+  .section-title{
+    font-size: 1.25rem;
+    margin: 0 0 14px;
+  }
+  .posts-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 860px){
+    .posts-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  
+  .post-card{
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 16px 14px;
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+  }
+  .post-card h3{
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+  }
+  .post-meta{
+    font-size: .9rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .post-excerpt{
+    margin: 0;
+    color: rgba(15, 23, 42, 0.86);
+  }
+  
+  /* =========================
+     Content typography
+     ========================= */
+  .page-content{
+    padding: 18px 0 40px !important;
+  }
+  .post-title, .page-heading{
+    letter-spacing: .1px;
+  }
+  .post-content h2, .post-content h3{
+    margin-top: 1.6em;
+  }
+  .post-content img{
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  /* =========================
+     Footer
+     ========================= */
+  .site-footer{
+    border-top: 1px solid var(--border) !important;
+    background: rgba(255,255,255,.7);
+  }
+  .footer-col-wrapper{
+    color: var(--muted) !important;
+  }
+  
