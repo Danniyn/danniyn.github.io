@@ -2,8 +2,6 @@ title: "Danni Yagici Nielsen"
 description: "Mad og rejser i Tyrkiet"
 theme: minima
 
-# Nice URLs
+# Optional but recommended
+timezone: Europe/Copenhagen
 permalink: /blog/:year/:month/:day/:title/
-
-# Optional: show future posts off
-future: false
