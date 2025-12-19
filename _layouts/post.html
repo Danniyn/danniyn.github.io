@@ -4,7 +4,11 @@ layout: default
 
 <!-- Page Header -->
 {% if page.background %}
+  {% if page.background contains 'http' %}
+<header class="masthead" style="background-image: url('{{ page.background }}')">
+  {% else %}
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+  {% endif %}
   {% else %}
   <header class="masthead">
     {% endif %}
