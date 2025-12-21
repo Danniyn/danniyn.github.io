@@ -1,29 +1,45 @@
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Titel -->
   <title>
-    {% if page.url == "/" %}Danni Yagici Nielsen – Mad og rejser i Tyrkiet
-    {% elsif page.title %}{{ page.title | escape }} – Danni Yagici Nielsen
-    {% else %}{{ site.title | escape }}{% endif %}
+    {% if page.meta_title %}
+      {{ page.meta_title | escape }}
+    {% elsif page.url == "/" %}
+      Danni Yagici Nielsen – Rejs & Spis Godt
+    {% elsif page.title %}
+      {{ page.title | escape }} – Danni Yagici Nielsen - Rejs & Spis Godt
+    {% else %}
+      Danni Yagici Nielsen – Rejs & Spis Godt
+    {% endif %}
   </title>
 
-  {% if page.description %}
-  <meta name="description" content="{{ page.description | escape }}">
-  {% elsif page.subtitle %}
-  <meta name="description" content="{{ page.subtitle | escape }}">
-  {% else %}
-  <meta name="description" content="{{ site.description | escape }}">
-  {% endif %}
+  <!-- Meta-beskrivelse -->
+  <meta name="description" content="
+    {% if page.meta_description %}
+      {{ page.meta_description | escape }}
+    {% elsif page.subtitle %}
+      {{ page.subtitle | escape }}
+    {% else %}
+      Danni Yagici Nielsen - Rejse & Spis Godt - Er en blog omkring rejsetips og gastronomi i Middelhavet
+    {% endif %}
+  ">
 
+  <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+  <!-- FontAwesome -->
   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
+
+  <!-- Canonical URL -->
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+
+  <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
   <!-- Person Schema JSON-LD -->
@@ -40,5 +56,5 @@
     ]
   }
   </script>
-
 </head>
+
