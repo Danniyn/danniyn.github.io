@@ -2,29 +2,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Titel -->
-  <title>
-    {% if page.meta_title %}
-      {{ page.meta_title | escape }}
-    {% elsif page.url == "/" %}
-      Danni Yagici Nielsen – Rejs & Spis Godt
-    {% elsif page.title %}
-      {{ page.title | escape }} – Danni Yagici Nielsen - Rejs & Spis Godt
-    {% else %}
-      Danni Yagici Nielsen – Rejs & Spis Godt
-    {% endif %}
-  </title>
-
-  <!-- Meta-beskrivelse -->
-  <meta name="description" content="
-    {% if page.meta_description %}
-      {{ page.meta_description | escape }}
-    {% elsif page.subtitle %}
-      {{ page.subtitle | escape }}
-    {% else %}
-      Danni Yagici Nielsen - Rejse & Spis Godt - Er en blog omkring rejsetips og gastronomi i Middelhavet
-    {% endif %}
-  ">
+  {% seo %}
 
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -35,9 +13,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
 
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">

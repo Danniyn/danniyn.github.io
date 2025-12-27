@@ -3,7 +3,7 @@ email:
 description:        Danni Yagici Nielsen deler rejseguider, madoplevelser og lokale anbefalinger fra Middelhavet.
 author:             Danni Yagici Nielsen
 baseurl:            ""
-url:                "https://danniyn.github.io"
+url:                "https://www.danniyagicinielsen.dk"
 
 # Social Profiles
 twitter_username:
@@ -22,4 +22,5 @@ paginate_path:      "/blog/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-sitemap
+  - jekyll-seo-tag
